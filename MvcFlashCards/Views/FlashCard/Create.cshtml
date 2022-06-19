@@ -1,0 +1,46 @@
+﻿@model MvcFlashCards.Models.FlashCard
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Adicionar novo FlashCard</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <span asp-validation-for="UserId" class="text-danger"></span> 
+            <div class="form-group">
+                <label asp-for="MsgFrente" class="control-label"></label>
+                <textarea asp-for="MsgFrente" class="form-control "></textarea>
+                <span asp-validation-for="MsgFrente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MsgVerso" class="control-label"></label>
+                <textarea asp-for="MsgVerso" class="form-control" ></textarea>
+                <span asp-validation-for="MsgVerso" class="text-danger"></span>
+                
+            </div>
+            <div class="form-group">
+                <label asp-for="Categoria" class="control-label"></label>
+                <input asp-for="Categoria" class="form-control" />
+                <span asp-validation-for="Categoria" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <select asp-for="UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
+            </div>*@
+            <div class="form-group">
+                <input type="submit" value="Adicionar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="List">Voltar para meus FlashCards</a>
+</div>
+
